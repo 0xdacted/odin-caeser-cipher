@@ -17,9 +17,9 @@ def caeser_cipher(string,shift)
         
        unless position > 25
         ciphered = alphabet[position]
+        ciphered_text << ciphered
 
        else ciphered = alphabet[position - 25]
-
         ciphered_text << ciphered
        end
       end
@@ -28,8 +28,9 @@ def caeser_cipher(string,shift)
     else
     ciphered_text << (' ') 
     end
+  end
   ciphered_text 
-end
+ 
 end
 
 p caeser_cipher("what a life", 7)
