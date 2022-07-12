@@ -11,7 +11,7 @@ def caeser_cipher(string,shift)
   ciphered_text = ''
 
   string_array.each do|character| 
-    unless character == ' '
+    unless character == ' ' || character == '!' || character == '?' 
       alphabet.each_with_index do|letter, index| 
       if letter == character
         position = index.to_i + shift.to_i
@@ -25,12 +25,11 @@ def caeser_cipher(string,shift)
        end
       end
     end
-
     else
-    ciphered_text << (' ') 
+    ciphered_text << (character)
     end
   end
   ciphered_text 
 end
 
-p caeser_cipher("what a life", 5)
+p caeser_cipher("What a string!", 5)
