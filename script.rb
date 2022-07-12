@@ -13,23 +13,22 @@ def caeser_cipher(string,shift)
     unless character == ' '
       alphabet.each_with_index do|letter, index| 
       if letter == character
-      
-       unless index.to_i + shift.to_i > 25
-        ciphered = alphabet[index.to_i + shift.to_i]
+        position = index.to_i + shift.to_i
+        
+       unless position > 25
+        ciphered = alphabet[position]
 
-       else ciphered = alphabet[index.to_i + shift.to_i - 25]
+       else ciphered = alphabet[position - 25]
 
-      ciphered_text << ciphered
+        ciphered_text << ciphered
        end
-
-       
-    else
-    ciphered_text << (' ')
+      end
     end
-  end
-  ciphered_text 
 
-end
+    else
+    ciphered_text << (' ') 
+    end
+  ciphered_text 
 end
 end
 
