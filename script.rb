@@ -7,7 +7,7 @@ require 'pry-byebug'
 def caeser_cipher(string,shift)
   alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
   string_array = string.downcase.split('')
-  cipher_array = []
+  ciphered_text = ''
 
   string_array.each do|character| 
     unless character == ' '
@@ -18,15 +18,19 @@ def caeser_cipher(string,shift)
         ciphered = alphabet[index.to_i + shift.to_i]
 
        else ciphered = alphabet[index.to_i + shift.to_i - 25]
+
+      ciphered_text << ciphered
        end
-       cipher_array.push(ciphered) 
+
+       
     else
-    cipher_array.push(' ')
+    ciphered_text << (' ')
     end
   end
-  cipher_array.flatten
+  ciphered_text 
+
 end
 end
 end
 
-caeser_cipher("what a life", 7)
+p caeser_cipher("what a life", 7)
